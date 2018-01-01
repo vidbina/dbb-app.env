@@ -11,7 +11,7 @@ rec {
       automake
 
       curl
-      gcc49
+      gcc48
       libtool
       libudev
       libusb
