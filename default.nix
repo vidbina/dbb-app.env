@@ -12,6 +12,7 @@ rec {
 
       curl
       gcc48
+      git
       libtool
       libudev
       libusb
