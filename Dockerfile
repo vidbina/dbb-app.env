@@ -29,3 +29,6 @@ RUN \
     libqrencode-dev
 
 COPY src /usr/src
+WORKDIR /usr/src
+
+RUN ./autogen.sh && ./configure --enable-debug --enable-libusb && make
