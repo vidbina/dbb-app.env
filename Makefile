@@ -13,4 +13,10 @@ shell:
 		${DOCKER_IMAGE} \
 		/bin/bash
 
-.PHONY: image shell
+mounted-shell:
+	${DOCKER} run --rm -it \
+		${DOCKER_VOLUME} ${DOCKER_USER} \
+		${DOCKER_IMAGE} \
+		/bin/bash
+
+.PHONY: image mounted-shell shell
