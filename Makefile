@@ -1,12 +1,16 @@
 DOCKER=docker
-DOCKER_ARGS=-v ${DBB_PATH}:/src -w /src -u `id -u`:`id -g`
-DOCKER_IMAGE=vidbina/dbb-app
+DBB_PATH?=src
+DOCKER_VOLUME=-v ${DBB_PATH}:/usr/src
+DOCKER_USER=-u `id -u`:`id -g`
+
+DOCKER_IMAGE?=vidbina/dbb-app
 
 image:
 	${DOCKER} build --rm --force-rm -t ${DOCKER_IMAGE} .
 
 shell:
 	${DOCKER} run --rm -it \
-		${DOCKER_ARGS} \
 		${DOCKER_IMAGE} \
 		/bin/bash
+
+.PHONY: image shell
