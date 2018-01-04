@@ -27,3 +27,5 @@ RUN \
     qt55tools \
     qt55multimedia \
     libqrencode-dev
+
+COPY src /usr/src
