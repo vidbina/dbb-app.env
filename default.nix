@@ -10,17 +10,26 @@ rec {
       autoconf
       automake
 
+      boost
       curl
       gcc48
+      gcc5
       git
+      qt5.qtbase
+      qt5.qmake
+      qt5.qtmultimedia
+      qt5.qttools
+      libevent
       libtool
       libudev
       libusb
+      libqrencode
       pkgconfig
     ];
 
     hardeningDisable = [
-      "format"
+      "all"
+      #"format"
     ];
 
     shellHook = ''
