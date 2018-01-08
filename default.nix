@@ -49,6 +49,7 @@ rec {
 
     QTBASE="${qt5.qtbase.bin}";
     QTBASE_DEV="${qt5.qtbase.dev}";
+    #QTBASE_DEVTOOLS="${qt5.qtbase.devTools}";
     QTTOOLS="${qt5.qttools.bin}";
     QTTOOLS_DEV="${qt5.qttools.dev}";
 
