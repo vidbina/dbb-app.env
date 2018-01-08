@@ -7,25 +7,36 @@ rec {
     version = "0.1.0";
 
     buildInputs = [
-      autoconf
-      automake
-
       boost
-      curl
-      gcc48
-      gcc5
-      git
-      qt5.qtbase
-      qt5.qmake
-      qt5.qtmultimedia
-      qt5.qttools
       libevent
       libtool
       libudev
       libusb
       libqrencode
       pkgconfig
+    ] ++ gccPkgs ++ utilPkgs ++ qtPkgs;
 
+    qtPkgs = [
+      #qt5.full
+      qt56.full
+#      qt5.qtbase
+#      qt5.qmake
+#      qt5.qtmultimedia
+#      qt5.qttools
+    ];
+
+    gccPkgs = [
+      autoconf
+      automake
+    ];
+
+    utilPkgs = [
+      curl
+      #gcc48
+      gcc5
+      gcc6
+      git
+      less
       which
     ];
 
