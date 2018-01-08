@@ -26,7 +26,8 @@ RUN \
     qt55base \
     qt55tools \
     qt55multimedia \
-    libqrencode-dev
+    libqrencode-dev \
+    strace
 
 COPY src /usr/src
 WORKDIR /usr/src
