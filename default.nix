@@ -28,13 +28,15 @@ rec {
     gccPkgs = [
       autoconf
       automake
+      gcc49
     ];
 
     utilPkgs = [
       curl
-      gcc49
+      file
       git
       less
+      strace
       which
     ];
 
