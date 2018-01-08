@@ -46,15 +46,7 @@ rec {
     LRELEASE="${qt56.qttools.dev}/bin/lrelease";
     LUPDATE="${qt56.qttools.dev}/bin/lupdate";
 
-    LD_LIBRARY_PATH="${qt56.qtbase}/lib";
-
-    QT_BINDDIR="${qt56.qtbase.dev}/bin:${qt56.qttools.dev}/bin";
-
-    QTBASE="${qt56.qtbase}";
-    QTBASE_DEV="${qt56.qtbase.dev}";
-    #QTBASE_DEVTOOLS="${qt56.qtbase.devTools}";
-    QTTOOLS="${qt56.qttools}";
-    QTTOOLS_DEV="${qt56.qttools.dev}";
+    #LD_LIBRARY_PATH="${qt56.qtbase}/lib";
 
     configureFlags = [
       "--enable-debug"
