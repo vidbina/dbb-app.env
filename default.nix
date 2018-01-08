@@ -60,8 +60,14 @@ rec {
       #"format"
     ];
 
+    fhsEnv = buildFHSUserEnv {
+      inherit name;
+    };
+
     shellHook = ''
       export PS1="\e[1;33m$ \e[0m";
+      echo "Type \`fhs\` to drop into FHS env"
+      alias fhs="${fhsEnv}/bin/${name}"
       cd tmp
     '';
   };
