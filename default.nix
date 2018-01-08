@@ -48,8 +48,6 @@ rec {
     LRELEASE="${qt56.qttools.dev}/bin/lrelease";
     LUPDATE="${qt56.qttools.dev}/bin/lupdate";
 
-    #LD_LIBRARY_PATH="${qt56.qtbase}/lib";
-
     configureFlags = [
       "--enable-debug"
       "--enable-libusb"
