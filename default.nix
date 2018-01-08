@@ -32,30 +32,35 @@ rec {
 
     utilPkgs = [
       curl
-      #gcc48
-      gcc5
-      gcc6
+      gcc49
       git
       less
       which
     ];
 
-    QTDIR="${qt5.qtbase.dev}";
-    MOC="${qt5.qtbase.dev}/bin/moc";
-    UIC="${qt5.qtbase.dev}/bin/uic";
-    RCC="${qt5.qtbase.dev}/bin/rcc";
-    LRELEASE="${qt5.qttools.dev}/bin/lrelease";
-    LUPDATE="${qt5.qttools.dev}/bin/lupdate";
+    QTDIR="${qt56.qtbase.dev}";
 
-    QTBASE="${qt5.qtbase.bin}";
-    QTBASE_DEV="${qt5.qtbase.dev}";
-    #QTBASE_DEVTOOLS="${qt5.qtbase.devTools}";
-    QTTOOLS="${qt5.qttools.bin}";
-    QTTOOLS_DEV="${qt5.qttools.dev}";
+    MOC="${qt56.qtbase.dev}/bin/moc";
+    UIC="${qt56.qtbase.dev}/bin/uic";
+    RCC="${qt56.qtbase.dev}/bin/rcc";
+    LRELEASE="${qt56.qttools.dev}/bin/lrelease";
+    LUPDATE="${qt56.qttools.dev}/bin/lupdate";
+
+    LD_LIBRARY_PATH="${qt56.qtbase}/lib";
+
+    QT_BINDDIR="${qt56.qtbase.dev}/bin:${qt56.qttools.dev}/bin";
+
+    QTBASE="${qt56.qtbase}";
+    QTBASE_DEV="${qt56.qtbase.dev}";
+    #QTBASE_DEVTOOLS="${qt56.qtbase.devTools}";
+    QTTOOLS="${qt56.qttools}";
+    QTTOOLS_DEV="${qt56.qttools.dev}";
 
     configureFlags = [
       "--enable-debug"
       "--enable-libusb"
+      "--with-qt-bindir=${qt56.qtbase.dev}/bin:${qt56.qttools.dev}/bin"
+      #"--with-qt-bindir=${QT_BINDDIR}"
     ];
 
     hardeningDisable = [
