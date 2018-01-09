@@ -7,7 +7,7 @@ rec {
     version = "0.1.0";
 
     buildInputs = [
-      boost
+      curl
       libevent
       libtool
       libudev
@@ -32,7 +32,6 @@ rec {
     ];
 
     utilPkgs = [
-      curl
       file
       git
       less
