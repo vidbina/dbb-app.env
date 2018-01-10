@@ -12,8 +12,9 @@ RUN \
     build-essential \
     clang \
     libcurl4-openssl-dev \
-    gcc-4.8 \
     g++-4.8 \
+    gcc-4.8 \
+    git \
     libboost-all-dev \
     libevent-dev \
     libudev-dev \
@@ -27,7 +28,8 @@ RUN \
     qt55tools \
     qt55multimedia \
     libqrencode-dev \
-    strace
+    strace \
+    tree
 
 COPY src /usr/src
 WORKDIR /usr/src
