@@ -34,4 +34,11 @@ RUN \
 COPY src /usr/src
 WORKDIR /usr/src
 
-RUN ./autogen.sh && ./configure --enable-debug --enable-libusb && make && make install
+RUN \
+  ./autogen.sh && \
+  ./configure \
+    --enable-debug \
+    --enable-libusb \
+    --prefix=$PWD/install && \
+  make && \
+  make install
