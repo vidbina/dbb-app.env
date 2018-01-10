@@ -47,6 +47,13 @@ rec {
     LRELEASE="${qt56.qttools.dev}/bin/lrelease";
     LUPDATE="${qt56.qttools.dev}/bin/lupdate";
 
+    LD_LIBRARY_PATH = lib.concatStringsSep ":" [
+      "src/libbtc/.libs"
+      "src/libbtc/src/secp256k1/.libs"
+      "src/hidapi/libusb/.libs"
+      "src/univalue/.libs"
+    ];
+
     configureFlags = [
       "--enable-debug"
       "--enable-libusb"

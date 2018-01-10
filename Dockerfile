@@ -42,3 +42,5 @@ RUN \
     --prefix=$PWD/install && \
   make && \
   make install
+
+ENV LD_LIBRARY_PATH=/usr/src/src/.libs:/usr/src/src/univalue/.libs:/usr/src/src/libbtc/.libs:/usr/src/src/hidapi/libusb/.libs
