@@ -28,6 +28,7 @@ rec {
       autoconf
       automake
       gcc49
+      gdb
     ];
 
     utilPkgs = [
@@ -35,6 +36,7 @@ rec {
       git
       less
       strace
+      tree
       which
     ];
 
