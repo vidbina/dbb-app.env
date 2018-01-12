@@ -68,12 +68,6 @@ in rec {
       "format"
     ];
 
-    fhsEnv = buildFHSUserEnv {
-      inherit name;
-
-      targetPkgs = pkgs: buildInputs;
-    };
-
     README = ''
       Run
         ./autogen.sh
@@ -81,14 +75,11 @@ in rec {
         make
         make install
       in order to produce binaries in $PWD/install.
-
-      Run "fhs" to drop into a FHS env from which the install/bin/dbb-app should be executable.
     '';
 
     shellHook = ''
       export PS1="\e[1;33m$ \e[0m";
       echo "$README";
-      alias fhs="${fhsEnv}/bin/${name}";
       cd tmp;
     '';
   };
