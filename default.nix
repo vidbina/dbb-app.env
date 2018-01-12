@@ -62,8 +62,7 @@ rec {
     ];
 
     hardeningDisable = [
-      "all"
-      #"format"
+      "format"
     ];
 
     fhsEnv = buildFHSUserEnv {
