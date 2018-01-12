@@ -20,11 +20,9 @@ in rec {
     ] ++ gccPkgs ++ utilPkgs ++ qtPkgs;
 
     qtPkgs = [
-      qt.full
-#      qt5.qtbase
-#      qt5.qmake
-#      qt5.qtmultimedia
-#      qt5.qttools
+      qt5.qtbase
+      qt5.qtmultimedia
+      qt5.qttools
     ];
 
     gccPkgs = [
