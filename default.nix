@@ -17,7 +17,6 @@ rec {
     ] ++ gccPkgs ++ utilPkgs ++ qtPkgs;
 
     qtPkgs = [
-      #qt5.full
       qt56.full
 #      qt5.qtbase
 #      qt5.qmake
@@ -58,7 +57,6 @@ rec {
       "--enable-debug"
       "--enable-libusb"
       "--with-qt-bindir=${qt56.qtbase.dev}/bin:${qt56.qttools.dev}/bin"
-      #"--with-qt-bindir=${QT_BINDDIR}"
     ];
 
     hardeningDisable = [
