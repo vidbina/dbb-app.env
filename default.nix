@@ -71,18 +71,22 @@ rec {
       targetPkgs = pkgs: buildInputs;
     };
 
+    README = ''
+      Run
+        ./autogen.sh
+        ./configure --prefix=$PWD/install --enable-debug --enable-libusb
+        make
+        make install
+      in order to produce binaries in $PWD/install.
+
+      Run "fhs" to drop into a FHS env from which the install/bin/dbb-app should be executable.
+    '';
+
     shellHook = ''
       export PS1="\e[1;33m$ \e[0m";
-      echo "Run"
-      echo "  ./autogen.sh"
-      echo "  ./configure --prefix=$PWD/install --enable-debug --enable-libusb"
-      echo "  make"
-      echo "  make install"
-      echo "in order to produce binaries in $PWD/install"
-      echo ""
-      echo "Run \`fhs\` to drop into FHS env from which the install/bin/dbb-app should be executable"
-      alias fhs="${fhsEnv}/bin/${name}"
-      cd tmp
+      echo "$README";
+      alias fhs="${fhsEnv}/bin/${name}";
+      cd tmp;
     '';
   };
 }
