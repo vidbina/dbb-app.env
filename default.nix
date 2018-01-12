@@ -68,6 +68,8 @@ rec {
 
     fhsEnv = buildFHSUserEnv {
       inherit name;
+
+      targetPkgs = pkgs: buildInputs;
     };
 
     shellHook = ''
