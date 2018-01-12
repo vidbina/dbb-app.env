@@ -1,6 +1,9 @@
 with import <nixpkgs>{};
 
-rec {
+let
+  qt = qt59;
+  gcc = gcc5;
+in rec {
   dbb = stdenv.mkDerivation rec {
     name = "dbb-app.env";
     src = ./.;
@@ -17,7 +20,7 @@ rec {
     ] ++ gccPkgs ++ utilPkgs ++ qtPkgs;
 
     qtPkgs = [
-      qt56.full
+      qt.full
 #      qt5.qtbase
 #      qt5.qmake
 #      qt5.qtmultimedia
@@ -27,7 +30,7 @@ rec {
     gccPkgs = [
       autoconf
       automake
-      gcc49
+      gcc
       gdb
     ];
 
@@ -40,13 +43,13 @@ rec {
       which
     ];
 
-    QTDIR="${qt56.qtbase.dev}";
+    QTDIR="${qt.qtbase.dev}";
 
-    MOC="${qt56.qtbase.dev}/bin/moc";
-    UIC="${qt56.qtbase.dev}/bin/uic";
-    RCC="${qt56.qtbase.dev}/bin/rcc";
-    LRELEASE="${qt56.qttools.dev}/bin/lrelease";
-    LUPDATE="${qt56.qttools.dev}/bin/lupdate";
+    MOC="${qt.qtbase.dev}/bin/moc";
+    UIC="${qt.qtbase.dev}/bin/uic";
+    RCC="${qt.qtbase.dev}/bin/rcc";
+    LRELEASE="${qt.qttools.dev}/bin/lrelease";
+    LUPDATE="${qt.qttools.dev}/bin/lupdate";
 
     LD_LIBRARY_PATH = lib.concatStringsSep ":" [
       "src/libbtc/.libs"
@@ -58,7 +61,7 @@ rec {
     configureFlags = [
       "--enable-debug"
       "--enable-libusb"
-      "--with-qt-bindir=${qt56.qtbase.dev}/bin:${qt56.qttools.dev}/bin"
+      "--with-qt-bindir=${qt.qtbase.dev}/bin:${qt.qttools.dev}/bin"
     ];
 
     hardeningDisable = [
