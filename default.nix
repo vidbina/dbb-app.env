@@ -2,9 +2,9 @@ with import <nixpkgs>{};
 
 rec {
   dbb = stdenv.mkDerivation rec {
-    name = "digitalbitbox-dev-env";
+    name = "dbb-app.env";
     src = ./.;
-    version = "0.1.0";
+    version = "latest";
 
     buildInputs = [
       curl
